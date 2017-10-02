@@ -1,4 +1,4 @@
-char* our_strncpy(char* dest, char* source);
+char* our_strncpy(char* dest, char* source, int n);
 
 char * our_strcat( char *dest, char *source );
 
