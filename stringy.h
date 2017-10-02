@@ -8,4 +8,4 @@ int our_strcmp( char *s1, char *s2 );
 
 char * our_strchr( char *s, char c );
 
-char * our_strstr( char *s1, char * s2 )
+char * our_strstr( char *s1, char * s2 );
