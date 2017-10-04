@@ -59,7 +59,7 @@ char * our_strchr( char *s, char c ) {
 }
 
 char * our_strstr( char *s1, char * s2 ) {
-  while (*s1 && *s2) {
+  for (; *s1; s1++) {
     if (*s1 == *s2) {
       char* s1_start = s1;
       char* s2_start = s2;
@@ -69,16 +69,17 @@ char * our_strstr( char *s1, char * s2 ) {
 	s2++;
       } while (*s2 && *s1 == *s2);
 
+      // We traversed to the end of s2 and matched each char with one in s1.
+      // Therefore s2 is a substring of s1.
       if (!*s2) {
 	return s1_start;
       }
 
+      // One of the chars was mismatched-- rewind to a previous state.
+      // This matters for cases like searching "earearful" for "earful".
       s1 = s1_start;
       s2 = s2_start;
     }
-
-    s1++;
-    s2++;
   }
 
   return NULL;
