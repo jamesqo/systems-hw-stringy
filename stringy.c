@@ -51,7 +51,7 @@ int our_strcmp( char *s1, char *s2 ) {
 }
 
 char * our_strchr( char *s, char c ) {
-  for (; *s != '\0'; s++) {
+  for (; *s; s++) {
     if (*s == c) return s;
   }
 

@@ -20,6 +20,9 @@ int main() {
   printf("Testing strcmp(s3, s4):\n[standard]: %d\n[mine]: %d\n", strcmp(s3, s4), our_strcmp(s3, s4));
   printf("Testing strcmp(s4, s3):\n[standard]: %d\n[mine]: %d\n", strcmp(s4, s3), our_strcmp(s4, s3));
   printf("Testing strcmp(s4, s5):\n[standard]: %d\n[mine]: %d\n\n", strcmp(s4, s5), our_strcmp(s4, s5));
+
+  printf("Testing strchr(s, 'e'):\n[standard]: %p\n[mine]: %p\n", strchr(s, 'e'), our_strchr(s, 'e'));
+  printf("Testing strchr(s2, 'e'):\n[standard]: %p\n[mine]: %p\n\n", strchr(s2, 'e'), our_strchr(s2, 'e'));
   
   printf("Testing strncpy(s, s2, 4):\n");
 
