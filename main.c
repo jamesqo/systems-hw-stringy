@@ -32,5 +32,14 @@ int main() {
   char* our_strncpy_result = our_strncpy(s, s2, 4);
   printf("[mine]: %s\n", our_strncpy_result);
   strncpy(s, tmp_buffer, 4);
+
+  char* strstr_result_1 = strstr("earearful", "earful");
+  char* our_strstr_result_1 = our_strstr("earearful", "earful");
+  printf("Testing strstr(\"earearful\", \"earful\"):\n[standard]: %p\n[mine]: %p\n\n", strstr_result_1, our_strstr_result_1);
+
+  char* strstr_result_2 = strstr("hello world", "not inside");
+  char* our_strstr_result_2 = our_strstr("hello world", "not inside");
+  printf("Testing strstr(\"hello world\", \"not inside\"):\n[standard]: %p\n[mine]: %p\n\n", strstr_result_2, our_strstr_result_2);
+
   return 0;
 }
