@@ -4,12 +4,18 @@
 #include "stringy.h"
 
 char* our_strncpy(char* dest, char* source, int n) {
+  char* orig_dest = dest;
+
   for (; n > 0; n--) {
     *dest++ = *source++;
   }
+
+  return orig_dest;
 }
 
 char * our_strcat( char *dest, char *source ) {
+  char* orig_dest = dest;
+
   while (*dest) {
     dest++;
   }
@@ -23,6 +29,8 @@ char * our_strcat( char *dest, char *source ) {
 
     *dest++ = c;
   }
+
+  return orig_dest;
 }
 
 int our_strlen( char * s) {
@@ -43,12 +51,15 @@ int our_strcmp( char *s1, char *s2 ) {
 }
 
 char * our_strchr( char *s, char c ) {
+  for (; *s != '\0'; s++) {
+    if (*s == c) return s;
+  }
+
+  return NULL;
 }
 
 char * our_strstr( char *s1, char * s2 ) {
   while (*s1 && *s2) {
-    char c = *s1;
-    char d = *s2;
     if (*s1 == *s2) {
       char* s1_start = s1;
       char* s2_start = s2;
@@ -69,6 +80,8 @@ char * our_strstr( char *s1, char * s2 ) {
     s1++;
     s2++;
   }
+
+  return NULL;
 }
 
 int main() {
