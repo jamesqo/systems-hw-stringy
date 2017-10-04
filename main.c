@@ -44,5 +44,16 @@ int main() {
   char* our_strstr_result_2 = our_strstr("hello world", "not inside");
   printf("Testing strstr(\"hello world\", \"not inside\"):\n[standard]: %p\n[mine]: %p\n\n", strstr_result_2, our_strstr_result_2);
 
+  char s6[5] = "s6";
+  char s7[] = "s7";
+  printf("s6: %s\ns7: %s\n", s6, s7);
+  
+  printf("Testing strcat(s6, s7):\n");
+  char* strcat_result = strcat(s6, s7);
+  printf("[standard]: %p\n", strcat_result);
+  s6[2] = s6[3] = s6[4] = '\0';
+  char* our_strcat_result = our_strcat(s6, s7);
+  printf("[mine]: %p\n", our_strcat_result);
+
   return 0;
 }
