@@ -50,10 +50,10 @@ int main() {
   
   printf("Testing strcat(s6, s7):\n");
   char* strcat_result = strcat(s6, s7);
-  printf("[standard]: %p\n", strcat_result);
+  printf("[standard]: %s\n", strcat_result);
   s6[2] = s6[3] = s6[4] = '\0';
   char* our_strcat_result = our_strcat(s6, s7);
-  printf("[mine]: %p\n", our_strcat_result);
+  printf("[mine]: %s\n", our_strcat_result);
 
   return 0;
 }

@@ -20,16 +20,12 @@ char * our_strcat( char *dest, char *source ) {
     dest++;
   }
 
-  while (1) {
-    char c = *source;
-    if (!c) {
-      *dest++ = 0;
-      break;
-    }
-
-    *dest++ = c;
+  while (*source) {
+    *dest++ = *source++;
   }
 
+  *dest = 0;
+  
   return orig_dest;
 }
 
